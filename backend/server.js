@@ -15,9 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(
-  'mongodb+srv://e_commerce_site:developer2020@cluster0.a2igt.mongodb.net/?retryWrites=true&w=majority'
-);
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona');
 
 // process.env.MONGODB_URL || 'mongodb://localhost/amazona');
 app.use('/api/uploads', uploadRouter);
