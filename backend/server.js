@@ -15,15 +15,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const username = process.env.USER_NAME;
-const password = process.env.PASSWORD;
-const database = process.env.DB_NAME;
+// const username = process.env.USER_NAME;
+// const password = process.env.PASSWORD;
+// const database = process.env.DB_NAME;
 
-mongoose.connect(
-  'mongodb+srv://db-store:Drbrand2020@cluster0.a2igt.mongodb.net/amazonDB?retryWrites=true&w=majority' ||
-    'mongodb://localhost/amazona'
-);
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona');
 
+// 'mongodb+srv://db-store:Drbrand2020@cluster0.a2igt.mongodb.net/amazonDB?retryWrites=true&w=majority';
 // process.env.MONGODB_URL || 'mongodb://localhost/amazona');
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
