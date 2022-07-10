@@ -5,8 +5,8 @@
   "description": "Online shopping store",
   "main": ".eslintrc.js",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon server.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "repository": {
     "type": "git",
