@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazonDB');
+mongoose.connect(process.env.MONGODB_URL);
 
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
