@@ -50,7 +50,7 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 const httpServer = http.Server(app);
 const io = new Server(httpServer, { cors: { origin: '*' } });
@@ -124,8 +124,8 @@ io.on('connection', (socket) => {
   });
 });
 
-httpServer.listen(port, () => {
-  console.log(`Serve at http://localhost:${port}`);
+httpServer.listen(PORT, () => {
+  console.log(`Serve at http://localhost:${PORT}`);
 });
 
 // app.listen(port, () => {
