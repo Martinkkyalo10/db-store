@@ -5,7 +5,7 @@
   "description": "Online shopping store",
   "main": ".eslintrc.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "build": "cd frontend && npm install && npm run build"
   },
   "repository": {
