@@ -17,7 +17,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(
+  'mongodb+srv://db-store:Drbrand2020@cluster0.a2igt.mongodb.net/amazonDB?retryWrites=true&w=majority'
+);
 
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
