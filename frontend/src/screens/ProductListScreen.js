@@ -66,29 +66,29 @@ export default function ProductListScreen(props) {
     }
   };
   const createHandler = () => {
-    dispatch(createProduct());
+    navigate('/products/create');
   };
   return (
     <div>
-      <div className="row">
+      <div className='row'>
         <h1>Products</h1>
-        <button type="button" className="primary" onClick={createHandler}>
+        <button type='button' className='primary' onClick={createHandler}>
           Create Product
         </button>
       </div>
 
       {loadingDelete && <LoadingBox></LoadingBox>}
-      {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
+      {errorDelete && <MessageBox variant='danger'>{errorDelete}</MessageBox>}
 
       {loadingCreate && <LoadingBox></LoadingBox>}
-      {errorCreate && <MessageBox variant="danger">{errorCreate}</MessageBox>}
+      {errorCreate && <MessageBox variant='danger'>{errorCreate}</MessageBox>}
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
+        <MessageBox variant='danger'>{error}</MessageBox>
       ) : (
         <>
-          <table className="table">
+          <table className='table'>
             <thead>
               <tr>
                 <th>ID</th>
@@ -109,15 +109,15 @@ export default function ProductListScreen(props) {
                   <td>{product.brand}</td>
                   <td>
                     <button
-                      type="button"
-                      className="small"
+                      type='button'
+                      className='small'
                       onClick={() => navigate(`/product/${product._id}/edit`)}
                     >
                       Edit
                     </button>
                     <button
-                      type="button"
-                      className="small"
+                      type='button'
+                      className='small'
                       onClick={() => deleteHandler(product)}
                     >
                       Delete
@@ -127,7 +127,7 @@ export default function ProductListScreen(props) {
               ))}
             </tbody>
           </table>
-          <div className="row center pagination">
+          <div className='row center pagination'>
             {[...Array(pages).keys()].map((x) => (
               <Link
                 className={x + 1 === page ? 'active' : ''}

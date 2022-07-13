@@ -5,8 +5,11 @@
   "description": "Online shopping store",
   "main": ".eslintrc.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "cd frontend && npm install && npm run build"
+    "server": "nodemon server.js",
+    "build": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
   "devDependencies": {
     "eslint": "^8.18.0",
     "eslint-plugin-react": "^7.30.1",
+    "gh-pages": "^4.0.0",
     "netlify-cli": "^10.7.1",
     "nodemon": "^2.0.18"
   }
