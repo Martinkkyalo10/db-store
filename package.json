@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "Online shopping store",
   "main": ".eslintrc.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "server": "nodemon server.js",
     "build": "cd frontend && npm install && npm run build",
