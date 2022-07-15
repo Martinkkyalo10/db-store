@@ -8,7 +8,9 @@ import {
 } from '../constants/cartConstants';
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
-  const { data } = await Axios.get(`/api/products/${productId}`);
+  const { data } = await Axios.get(
+    `https://db-store-server.herokuapp.com/api/products/${productId}`
+  );
   const {
     cart: { cartItems },
   } = getState();

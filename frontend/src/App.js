@@ -31,7 +31,6 @@ import MapScreen from './screens/MapScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
-import ProductCreateScreen from './screens/ProductCreateScreen';
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -187,10 +186,7 @@ function App() {
               element={ProductEditScreen}
               exact
             ></Route>
-            <Route
-              path='/products/create'
-              element={<ProductCreateScreen />}
-            ></Route>
+
             <Route path='/signin' element={<SigninScreen />}></Route>
             <Route path='/register' element={<RegisterScreen />}></Route>
             <Route path='/shipping' element={<ShippingAddressScreen />}></Route>

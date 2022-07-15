@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
-import {
-  createProduct,
-  deleteProduct,
-  listProducts,
-} from '../actions/productActions';
+import { deleteProduct, listProducts } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import {
